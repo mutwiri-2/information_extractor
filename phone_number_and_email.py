@@ -4,7 +4,7 @@
 
 import pyperclip, re 
 # phone number regex
-phone_number = re.compile(r'''(
+phone_number_regex = re.compile(r'''(
     (\d{3}|\(\d{3}\))?   # area code - optional
     (\s|-|\.)? # separator - optional depending on area code existence
     (\d{3})  # first three digits
@@ -14,7 +14,8 @@ phone_number = re.compile(r'''(
 )''', re.VERBOSE)
 
 
-# TODO - write an email regex
+# email regex
+
 
 # TODO - get text from clipboard and find matches
 
