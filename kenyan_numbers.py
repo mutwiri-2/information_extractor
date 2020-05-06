@@ -9,5 +9,6 @@ kenyan_number_regex = re.compile(r"""(
     (+254|0)   # country code
     (\s|-|,)?   # separator
     (7\d\d)     # prefix
+    (\s|-|,)?   # separator
     (\d{6})     # remaining numbers
 )""", re.VERBOSE)
