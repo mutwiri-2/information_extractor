@@ -28,7 +28,7 @@ for groups in kenyan_number_regex.findall(data):
 # neatly format and output the numbers found
 if len(numbers) > 0:
     pyperclip.copy('\n'.join(numbers))
-    print("Numbers copied to clipboard")
     print('\n'.join(numbers))
+    print("Numbers copied to clipboard")
 else:
     print("No Kenyan phone numbers found.")
