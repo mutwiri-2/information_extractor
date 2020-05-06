@@ -31,4 +31,3 @@ if len(numbers) > 0:
     print('\n'.join(numbers))
 else:
     print("No Kenyan phone numbers found.")
-
