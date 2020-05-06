@@ -20,13 +20,14 @@ data = str(pyperclip.paste())
 numbers = []
 
 for groups in kenyan_number_regex.findall(data):
-    phone_num = ' '.join([groups[2], groups[4], groups[6]])
+    # phone_num = ' '.join([groups[2], groups[4], groups[6]])
     # phone_num = ' '.join(['+254', groups[3], groups[5]])
+    phone_num = groups[0]
 numbers.append(phone_num)
 
 # neatly format and output the numbers found
 if len(numbers) > 0:
-    pyperclip.paste('\n'.join(numbers))
+    pyperclip.copy('\n'.join(numbers))
     print("Numbers copied to clipboard")
     print('\n'.join(numbers))
 else:
