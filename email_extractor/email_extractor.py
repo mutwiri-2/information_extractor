@@ -6,11 +6,11 @@ import pyperclip, re
 
 # email regex
 email_regex = re.compile(r"""(
-    [a-zA-Z0-9_%.+-]+  #username
+    [a-zA-Z0-9_%.+-]+  #username - one or more
     @  # the at symbol
-    [a-zA-Z0-9-.]+  # domain-name
+    [a-zA-Z0-9-.]+  # domain-name - one or more
     (\.[a-zA-Z]{2,4})  # top-level domain - dot something .com, .io, .org etc
-    # (\.[a-zA-Z]{2,4})?  # dot something - optional
+    (\.[a-zA-Z]{2,4})?  # dot something - optional
 )""", re.VERBOSE)
 
 
