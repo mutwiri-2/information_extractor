@@ -39,8 +39,12 @@ for groups in phone_number_regex.findall(text):
 for groups in email_regex.findall(text):
     matches.append(groups[0])
 
-# TODO - write a phone number regex
-
-# TODO - neatly format the output and copy it to the clipboard ready for use
+# neatly format the output and copy it to the clipboard ready for use
+if len(matches) > 0:
+    pyperclip.copy('\n'.join(matches))
+    print("Copied to clipboard")
+    print('\n'.join(matches))
+else:
+    print("No phone numbers or emails found")
 
 
