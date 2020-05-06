@@ -28,8 +28,8 @@ for groups in email_regex.findall(text):
 # neatly format the output and copy it to the clipboard ready for use
 if len(matches) > 0:
     pyperclip.copy('\n'.join(matches))
-    print("Copied to clipboard")
     print('\n'.join(matches))
+    print("Copied to clipboard")
 else:
     print("No emails found")
 
