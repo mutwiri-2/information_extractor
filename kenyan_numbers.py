@@ -13,6 +13,15 @@ kenyan_number_regex = re.compile(r"""(
     (\d{6})     # remaining numbers
 )""", re.VERBOSE)
 
-# TODO - get data from clipboard and find matches 
-
+# get data from clipboard  
 data = str(pyperclip.paste())
+
+# find numbers
+numbers = []
+
+for groups in kenyan_number_regex.findall(data):
+    phone_num = ' '.join([groups[1], groups[3], groups[5]])
+    phone_num = ' '.join(['+254', groups[3], groups[5]])
+numbers.append(phone_num)
+
+
