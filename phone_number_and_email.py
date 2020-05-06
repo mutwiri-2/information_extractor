@@ -23,7 +23,17 @@ email_regex = re.compile(r"""(
 )""", re.VERBOSE)
 
 
-# TODO - get text from clipboard and find matches
+# get text from clipboard and 
+text = str(pyperclip.paste())
+
+# find matches
+matches = []  # list to store strings that match our regexes
+# find phone number matches
+for groups in phone_number_regex.findall(text):
+    phone_num = '-'.join([groups[1], groups[3], groups[5]])
+    if groups[8] != '':
+        phone_num += 'x' + groups[8]
+    matches.append(phone_num)
 
 # TODO - write a phone number regex
 
