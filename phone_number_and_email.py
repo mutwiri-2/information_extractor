@@ -35,6 +35,10 @@ for groups in phone_number_regex.findall(text):
         phone_num += 'x' + groups[8]
     matches.append(phone_num)
 
+# find email matches
+for groups in email_regex.findall(text):
+    matches.append(groups[0])
+
 # TODO - write a phone number regex
 
 # TODO - neatly format the output and copy it to the clipboard ready for use
