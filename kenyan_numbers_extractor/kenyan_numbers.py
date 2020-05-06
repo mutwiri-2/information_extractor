@@ -20,7 +20,9 @@ data = str(pyperclip.paste())
 numbers = []
 
 for groups in kenyan_number_regex.findall(data):
-    numbers.append(groups[0])
+    # numbers.append(groups[0])
+    phone_num = ' '.join([groups[1], groups[3], groups[5]])
+    numbers.append(phone_num)
 
 # neatly format and output the numbers found
 if len(numbers) > 0:
