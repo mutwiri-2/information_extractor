@@ -7,9 +7,9 @@ import pyperclip, re
 
 kenyan_number_regex = re.compile(r"""(
     (+254|0)   # country code
-    (\s|-|,)?   # separator
-    (7\d\d)     # prefix
-    (\s|-|,)?   # separator
+    (\s|-)?   # separator
+    (7\d{2})     # prefix
+    (\s|-)?   # separator
     (\d{6})     # remaining numbers
 )""", re.VERBOSE)
 
@@ -20,8 +20,8 @@ data = str(pyperclip.paste())
 numbers = []
 
 for groups in kenyan_number_regex.findall(data):
-    phone_num = ' '.join([groups[1], groups[3], groups[5]])
-    phone_num = ' '.join(['+254', groups[3], groups[5]])
+    phone_num = ' '.join([groups[2], groups[4], groups[6]])
+    # phone_num = ' '.join(['+254', groups[3], groups[5]])
 numbers.append(phone_num)
 
 # neatly format and output the numbers found
