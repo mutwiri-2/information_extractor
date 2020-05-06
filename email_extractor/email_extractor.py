@@ -10,7 +10,7 @@ email_regex = re.compile(r"""(
     @  # the at symbol
     ([a-zA-Z0-9-.])  # domain-name
     (\.[a-zA-Z]{2,4})  # top-level domain - dot something .com, .io, .org etc
-    (\.[a-zA-Z0-9]{2,4})?  # dot something - optional
+    (\.[a-zA-Z]{2,4})?  # dot something - optional
 )""", re.VERBOSE)
 
 
