@@ -2,7 +2,7 @@
 
 # email_extractor.py - a program to find emails from text copied to the clipboard and paste back matches found to the clipboard.
 
-import pyperclip, re 
+import pyperclip, re, time
 
 # email regex
 email_regex = re.compile(r"""(
@@ -30,6 +30,7 @@ count = len(matches)
 if count > 0:
     pyperclip.copy('\n'.join(matches))
     print('\n'.join(matches))
+    time.sleep(0.5)
     print(f"{count} emails copied to clipboard")
 else:
     print("No emails found")
