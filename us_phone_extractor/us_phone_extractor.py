@@ -2,7 +2,7 @@
 
 # use_phone_numbers.py - a program to find USA phone numbers from text copied to the clipboard and paste back the results to the clipboard.
 
-import pyperclip, re 
+import pyperclip, re, time 
 # usa phone number regex
 phone_number_regex = re.compile(r'''(
     (\d{3}|\(\d{3}\))?   # area code - optional
@@ -30,6 +30,7 @@ count = len(matches)
 if count > 0:
     pyperclip.copy('\n'.join(matches))
     print('\n'.join(matches))
+    time.sleep(0.5)
     print(f"{count} numbers copied to clipboard")
 else:
     print("No phone numbers found")
