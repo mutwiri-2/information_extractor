@@ -26,10 +26,11 @@ for groups in email_regex.findall(text):
     matches.append(groups[0])
 
 # neatly format the output and copy it to the clipboard ready for use
-if len(matches) > 0:
+count = len(matches)
+if count > 0:
     pyperclip.copy('\n'.join(matches))
     print('\n'.join(matches))
-    print("Copied to clipboard")
+    print(f"{count} emails copied to clipboard")
 else:
     print("No emails found")
 
